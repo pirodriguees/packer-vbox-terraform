@@ -8,8 +8,8 @@ https://github.com/lsybrandt/packerterraform
 I still is studing the parameters to give the code better, and create for more virtualizers. Comming soon has more information.
 
 # Requeriments #
-golang
-terraform
-packer
-vagrant
-virtualbox
+* golang
+* terraform
+* packer
+* vagrant
+* virtualbox
