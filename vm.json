@@ -1,0 +1,41 @@
+{
+    "builders": [
+      {
+        "type": "virtualbox-iso",
+        "iso_url": "C:/Users/Vinicius/Documents/Projetos/packer_terraform_virt/iso/CentOS-7-x86_64-Minimal-1908.iso",
+        "iso_checksum": "9a2c47d97b9975452f7d582264e9fc16d108ed8252ac6816239a3b58cef5c53d",
+        "iso_checksum_type": "sha256",
+
+        "guest_os_type": "CentOS-7-x86_64-Minimal-1908",
+
+        "ssh_username": "admin",
+        "ssh_password": "admin123",
+        "ssh_wait_timeout": "1500s",
+
+        "cpus":     1,
+        "memory":   1024,
+
+        "disk_size":    20000,
+        "hard_drive_interface": "sata",
+
+        "floppy_files": [
+          "C:/Users/Vinicius/Documents/Projetos/packer_terraform_virt/kickstart/ks.cfg"
+        ],
+  
+        "boot_wait": "5s",
+  
+        "boot_command": [
+          "<tab> text ks=hd:/dev/fd0:ks.cfg ksdevice=eth0 net.ifnames=0 biosdevname=0<enter><wait>"
+        ],
+
+
+        "shutdown_command": "echo 'admin123' | sudo -S shutodwn -P now"
+
+
+      }
+    ],
+
+
+    "post-processors": ["vagrant"]
+
+    }
